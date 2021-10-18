@@ -1,0 +1,464 @@
+:root {
+    --main-color-font: #dd6292;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: var(--main-color-font);
+}
+
+body {
+    background: linear-gradient(75deg, #f0f8cd, #f1d1d2) fixed;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#background {
+    width: 100%;
+    height: 38vh;
+    position: absolute;
+    left: 0;
+    background-image: url("./src/img/background.png");
+    background-size: cover;
+    bottom: 0;
+    opacity: 0.5;
+    min-height: 220px;
+}
+
+#buttonsContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    top: 64vh;
+    z-index: 10;
+}
+
+
+#close {
+    line-height: 0;
+    top: -20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    font-size: 50px;
+    color: var(--main-color-font);
+    text-decoration: none;
+    z-index: 30;
+}
+
+#close:hover{
+    color: #F26294;
+}
+
+#commonContainer {
+    width: 86%;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+#contact {
+    color: #4f6811;
+    position: absolute;
+    bottom: 1em;
+    font-size: max(1.1em, min(7em, calc(100vw / 70)));
+    line-height: 0.15em;
+    font-weight: 500;
+    z-index: 5;
+}
+
+#lady {
+    position: absolute;
+    height: 45vh;
+    min-height: 150px;
+    width: 30vw;
+    min-width: 220px;
+    top: 16vh;
+    left: -2%;
+}
+
+#lotusesLogo {
+    top: 1em;
+    margin-bottom: 2em;
+    position: relative;
+    width: 20vh;
+    height: 9vw;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+#mainLogo {
+    position: absolute;
+    margin-top: 1em;
+    height: 12vh;
+    min-height: 71px;
+    min-width: 100;
+}
+
+#phone {
+    position: absolute;
+    z-index: 15;
+    max-height: 80vh;
+    top: 10vh;
+    right: 2%;
+    min-height: 206px;
+    min-width: 100px;
+    max-width: 25vw;
+}
+
+.button {
+    position: inherit;
+    width: 300px;
+    height: 100px;
+    background-color: #f0d0d1;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5em #444;
+    overflow: hidden;
+    transition-duration: 300ms;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #000000;
+}
+
+.containerAbout {
+    position: absolute;
+    left: 27%;
+    text-align: center;
+    min-height: 250px;
+}
+
+.containerAbout h1 {
+    line-height: 0.5em;
+    font-size: max(4.5em, min(40em, 8vw));
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.containerAbout h3 {
+    margin: 1em 0 1.5em;
+    line-height: 0.6em;
+    font-size: max(1.45em, min(10em, calc(100vw * 4 / 140)));
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.containerAbout p {
+    font-size: max(0.95em, min(7em, calc(100vw / 70)));
+    margin: 1em 0 0;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.8s ease;
+    z-index: 20;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay.openPopup{
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 25;
+    text-align: center;
+    background: linear-gradient(75deg, #f0f8cd, #f1d1d2);
+    border-radius: 15px;
+    transition: opacity 0.8s ease;
+    position: relative;
+}
+
+
+.popup .popupImage {
+    background: url("./src/img/popup.png") no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+button {
+    font-size: max(1em, min(2em, calc(100vw / 60)));
+    color: var(--main-color-font);
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #f0d0d1;
+    height: 13vh;
+    width: 18vw;
+    border-radius: 15px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (orientation: portrait) {
+    #background {
+        height: 30vh;
+    }
+    #buttonsContainer {
+        top: 45vh;
+        flex-direction: column;
+    }
+    #contact {
+        font-size: max(2em, min(5em, calc(100vw / 70)));
+    }
+    #lady {
+        left: -7%;
+        width: 45vw;
+    }
+    #lotusesLogo {
+        width: 10vh;
+        height: 10vh;
+    }
+    #mainLogo {
+        height: 8vh;
+    }
+    #phone {
+        height: 60vh;
+        max-width: 30vh;
+        right: 0;
+        top: 33vh;
+    }
+    .button {
+        width: 450px;
+        height: 150px;
+    }
+    .containerAbout {
+        min-height: 25vh;
+    }
+    .containerAbout h1 {
+        padding-top: 1vh;
+        font-size: max(10em, min(20em, 8vw));
+        line-height: 0.2em;
+    }
+    .containerAbout h3 {
+        font-size: max(3.5em, min(8em, calc(100vw * 4 / 140)));
+        height: 0;
+    }
+    .containerAbout p {
+        line-height: 1.1em;
+        font-size: max(2em, min(7em, calc(100vw / 70)));
+    }
+    .popup .popupImage {
+        background: url("./src/img/popupVertical.png") no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    button {
+        font-size: max(2em, min(7em, calc(100vw / 70)));
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1201px) {
+    #phone {
+        right: 0;
+    }
+    .button {
+        width: 240px;
+        height: 80px;
+    }
+    button {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 1201px) and (orientation: portrait) {
+    #phone {
+        height: 50vh;
+        top: 40vh;
+    }
+    .button {
+        width: 450px;
+        height: 150px;
+    }
+    button {
+        font-size: max(2em, min(7em, calc(100vw / 70)));
+    }
+}
+
+@media (max-width: 1025px) {
+    #commonContainer {
+        width: 96%;
+    }
+    #lady {
+        left: -10px;
+    }
+    #phone {
+        right: 1em;
+    }
+}
+
+@media (max-width: 1025px) and (orientation: portrait) {
+    .containerAbout h1 {
+        font-size: max(8em, min(16em, 8vw));
+    }
+    .containerAbout h3 {
+        font-size: max(2.8em, min(5.6em, calc(100vw * 4 / 140)));
+    }
+    .containerAbout p {
+        font-size: max(1.5em, min(4em, calc(100vw / 70)));
+    }
+    .button {
+        width: 330px;
+        height: 110px;
+        margin-left: 5vw;
+    }
+}
+
+@media (max-width: 769px) {
+    #buttonsContainer {
+        margin: 0;
+        top: 55vh;
+        padding-left: 10%;
+    }
+    #commonContainer {
+        width: 100%;
+    }
+    #contact {
+        left: 2vw;
+    }
+    #lady {
+        left: 1%;
+    }
+    #mainLogo {
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+    #phone {
+        display: none;
+    }
+    .containerAbout {
+        width: 70%;
+    }
+    .button {
+        margin-bottom: 15px;
+        width: 210px;
+    }
+}
+
+@media (max-width: 769px) and (orientation: portrait) {
+    #buttonsContainer {
+        top: 50vh;
+        width: auto;
+        padding: 0;
+        align-items: center;
+    }
+    #contact {
+        font-size: 1.5em;
+    }
+    #phone {
+        display: none;
+    }
+    .containerAbout h1 {
+        padding-top: 1vh;
+        font-size: 6em;
+        line-height: 0.2em;
+    }
+    .containerAbout h3 {
+        font-size: 2.1em;
+        height: 0;
+    }
+    .containerAbout p {
+        line-height: 1.1em;
+        font-size: 1.3em;
+    }
+    .button {
+        width: 300px;
+        height: 100px;
+        margin-left: 0;
+    }
+    button {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 577px) {
+    #buttonsContainer {
+        top: max(50%, 300px);
+        align-items: center;
+        padding-left: 0;
+        margin: 0 auto;
+    }
+    #commonContainer {
+        width: 100%;
+    }
+    #lady {
+        display: none;
+    }
+    #lotusesLogo {
+        min-width: 70px;
+        min-height: 70px;
+    }
+    #mainLogo {
+        min-height: 50px;
+        min-width: 70;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    #phone {
+        display: none;
+    }
+    .button {
+        margin: 0 10px;
+        font-size: 1em;
+    }
+    .containerAbout {
+        left: auto;
+        padding: 2.5em 0 1em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 577px) and (orientation: portrait) {
+    .button {
+        margin: 15px 0;
+    }
+}
+
+button img {
+    height: max(1em, min(7em, calc(100vw / 50)));
+    transition: 1s;
+    display: none;
+}
+
+button:hover {
+    box-shadow: 0 0 0.5em #444;
+    cursor: pointer;
+}
