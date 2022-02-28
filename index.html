@@ -13,54 +13,53 @@
     <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-    <div id="commonContainer">
-        <svg id="mainLogo">
+<body class="body">
+    <div class="body__commonContainer">
+        <svg class="body__mainLogo">
             <title>ArtMaryApps logo</title>
             <image xlink:href="./src/img/logoAMapps.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
         </svg>
-        <svg id="lady">
+        <svg class="body__lady">
             <title>sitting lady</title>
             <image xlink:href="./src/img/lady.png" height="100%" width="100%" preserveAspectRatio="xMinYMin" />
         </svg>
 
-        <div class="containerAbout">
-            <svg id="lotusesLogo">
+        <div class="body__containerAbout containerAbout">
+            <svg class="containerAbout__lotusesLogo">
                 <title>LotusesWC logo</title>
                 <image xlink:href="./src/img/logoLotuses.png" height="100%" width="100%" />
             </svg>
-            <h1>Lotuses</h1>
-            <h3>women's calendar</h3>
-            <p>простой и удобный календарь</br>
+            <h1 class="containerAbout__header">Lotuses</h1>
+            <h3 class="containerAbout__title">women's calendar</h3>
+            <p class="containerAbout__descr">простой и удобный календарь</br>
                 для отслеживания менструального цикла</br>
                 с возможностью сохранения данных в excel</p>
         </div>
-        <img src="src\img\Screenshot.png" alt="Phone screenshot" id="phone">
-        <div id="buttonsContainer">
+        <img src="src\img\Screenshot.png" alt="Phone screenshot" class="body__phone">
 
-            <button type="button" class="button" id="buttonDetails">
+        <div class="body__buttonsContainer buttonsContainer">
+            <button type="button" class="buttonsContainer__button button buttonsContainer__details" id="jsButtonDetails">
                 Узнайте подробности
-
             </button>
-            <div class="button">
+            <div class="buttonsContainer__button button">
                 <div>
                     <a href="https://play.google.com/store/apps/details?id=com.ArtMaryApps.LotusesWC">
-                        <img src="src\img\googleplay1.png" alt="Download from Google Play">
+                        <img src="src\img\googleplay1.png" alt="Download from Google Play" class="button__google">
                     </a>
                 </div>
             </div>
         </div>
-        <div id="contact">
+    </div>
+        <div class="body__contact">
             <p>Связь с разработчиком:</p>
             <p>artmary.apps@gmail.com</p>
         </div>
+    <div class="body__background">
     </div>
-    <div id="background">
-    </div>
-    <div id="popupDetails" class="overlay">
-        <div class="popup">
-            <p id="close">&times;</p>
-            <div class="popupImage">
+    <div id="jsPopupDetails" class="body__overlay overlay">
+        <div class="overlay__popup">
+            <p id="jsClose" class="overlay__close">&times;</p>
+            <div class="overlay__popupImage">
             </div>
         </div>
     </div>

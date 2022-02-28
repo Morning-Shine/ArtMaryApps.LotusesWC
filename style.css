@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     padding: 0;
@@ -11,34 +12,36 @@ html, body {
     color: var(--main-color-font);
 }
 
-body {
+.body {
     background: linear-gradient(75deg, #f0f8cd, #f1d1d2) fixed;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
+    position: absolute;
 }
 
-#background {
-    width: 100%;
-    height: 38vh;
+.body__background {
     position: absolute;
     left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 38vh;
     background-image: url("./src/img/background.png");
     background-size: cover;
-    bottom: 0;
     opacity: 0.5;
     min-height: 220px;
 }
-
-#buttonsContainer {
+.body__buttonsContainer {
+    width: 70%;
+    top: 64vh;
     position: relative;
+}
+.buttonsContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 70%;
-    top: 64vh;
     z-index: 10;
 }
 
-#close {
+.overlay__close {
     line-height: 0;
     top: -20px;
     cursor: pointer;
@@ -50,28 +53,28 @@ body {
     z-index: 30;
 }
 
-#close:hover {
-    color: #F26294;
+.overlay__close:hover {
+    color: #f26294;
 }
 
-#commonContainer {
+.body__commonContainer {
+    position: relative;
     width: 86%;
     margin: 0 auto;
-    position: relative;
     height: 100%;
 }
 
-#contact {
+.body__contact {
     color: #4f6811;
     position: absolute;
-    bottom: 1em;
     font-size: max(1.1em, min(7em, calc(100vw / 70)));
     line-height: 0.15em;
     font-weight: 500;
     z-index: 5;
+    bottom: 1em;
 }
 
-#lady {
+.body__lady {
     position: absolute;
     height: 45vh;
     min-height: 150px;
@@ -81,7 +84,7 @@ body {
     left: -2%;
 }
 
-#lotusesLogo {
+.containerAbout__lotusesLogo {
     top: 1em;
     margin-bottom: 2em;
     position: relative;
@@ -91,7 +94,7 @@ body {
     min-width: 100px;
 }
 
-#mainLogo {
+.body__mainLogo {
     position: absolute;
     margin-top: 1em;
     height: 12vh;
@@ -99,7 +102,7 @@ body {
     min-width: 100;
 }
 
-#phone {
+.body__phone {
     position: absolute;
     z-index: 15;
     max-height: 80vh;
@@ -109,9 +112,10 @@ body {
     min-width: 100px;
     max-width: 25vw;
 }
-
-.button {
+.buttonsContainer__button {
     position: inherit;
+}
+.button {
     width: 300px;
     height: 100px;
     background-color: #f0d0d1;
@@ -125,7 +129,7 @@ body {
     transform: scale(1.1);
 }
 
-.button img {
+.button__google {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -134,15 +138,17 @@ body {
     margin: 0 auto;
     background-color: #000000;
 }
-
-.containerAbout {
+.body__containerAbout {
     position: absolute;
     left: 27%;
+}
+
+.containerAbout {
     text-align: center;
     min-height: 250px;
 }
 
-.containerAbout h1 {
+.containerAbout__header {
     line-height: 0.5em;
     font-size: max(4.5em, min(40em, 8vw));
     font-weight: 400;
@@ -150,7 +156,7 @@ body {
     margin: 0;
 }
 
-.containerAbout h3 {
+.containerAbout__title {
     margin: 1em 0 1.5em;
     line-height: 0.6em;
     font-size: max(1.45em, min(10em, calc(100vw * 4 / 140)));
@@ -158,14 +164,14 @@ body {
     letter-spacing: 0.1em;
 }
 
-.containerAbout p {
+.containerAbout__descr {
     font-size: max(0.95em, min(7em, calc(100vw / 70)));
     margin: 1em 0 0;
     font-weight: 400;
     letter-spacing: 0.05em;
 }
 
-.overlay {
+.body__overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -178,12 +184,12 @@ body {
     opacity: 0;
 }
 
-.overlay.openPopup {
+.body__overlay.body__openPopup {
     visibility: visible;
     opacity: 1;
 }
 
-.popup {
+.overlay__popup {
     width: 80%;
     height: 80%;
     position: absolute;
@@ -197,7 +203,7 @@ body {
     position: relative;
 }
 
-.popup .popupImage {
+.overlay__popup .overlay__popupImage {
     background: url("./src/img/popup.png") no-repeat;
     background-position: center;
     background-size: contain;
@@ -209,10 +215,10 @@ body {
     bottom: 0;
 }
 
-button {
+.buttonsContainer__details {
     font-size: max(1em, min(2em, calc(100vw / 60)));
     color: var(--main-color-font);
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     background-color: #f0d0d1;
     height: 13vh;
     width: 18vw;
@@ -225,28 +231,30 @@ button {
 }
 
 @media (orientation: portrait) {
-    #background {
+    .body__commonContainer {
         height: 30vh;
     }
-    #buttonsContainer {
+    .body__buttonsContainer {
         top: 45vh;
+    }
+    .buttonsContainer {
         flex-direction: column;
     }
-    #contact {
+    .body__contact {
         font-size: max(2em, min(5em, calc(100vw / 70)));
     }
-    #lady {
+    .body__lady {
         left: -7%;
         width: 45vw;
     }
-    #lotusesLogo {
+    .containerAbout__lotusesLogo {
         width: 10vh;
         height: 10vh;
     }
-    #mainLogo {
+    .body__mainLogo {
         height: 8vh;
     }
-    #phone {
+    .body__phone {
         height: 60vh;
         max-width: 30vh;
         right: 0;
@@ -259,64 +267,66 @@ button {
     .containerAbout {
         min-height: 25vh;
     }
-    .containerAbout h1 {
+    .containerAbout__header {
         padding-top: 1vh;
         font-size: max(5vw, 8vh);
         line-height: 0.2em;
     }
-    .containerAbout h3 {
+    .containerAbout__title {
         font-size: max(3.5em, min(8em, calc(100vw * 4 / 140)));
         height: 0;
     }
-    .containerAbout p {
+    .containerAbout__descr {
         line-height: 1.1em;
         font-size: max(2em, min(7em, calc(100vw / 70)));
     }
-    .popup .popupImage {
+    .overlay__popup .overlay__popupImage {
         background: url("./src/img/popupVertical.png") no-repeat;
         background-position: center;
         background-size: contain;
     }
-    button {
+    .buttonsContainer__details {
         font-size: max(2em, min(7em, calc(100vw / 70)));
         margin-bottom: 30px;
     }
 }
 
 @media (max-aspect-ratio: 25/43) {
-    #buttonsContainer {
+    .body__buttonsContainer {
         top: 30vh;
     }
-    #lady {
+    .body__lady {
         bottom: 5vh;
         top: auto;
     }
-    #phone {
+    .body__phone {
         height: 50vh;
     }
-    .containerAbout {
+    .body__containerAbout {
         left: 0;
         right: 0;
         margin: 0 auto;
+    }
+    .containerAbout {
         text-align: center;
     }
 }
 
 @media (max-width: 1201px) {
-    #phone {
+    .body__phone {
         right: 0;
     }
     .button {
         width: 240px;
         height: 80px;
     }
-    button {
+    .buttonsContainer__details {
         font-size: 1.5em;
     }
 }
 
 @media (max-width: 1201px) and (orientation: portrait) {
-    #phone {
+    .body__phone {
         height: 50vh;
         top: 40vh;
     }
@@ -324,79 +334,83 @@ button {
         width: 450px;
         height: 150px;
     }
-    button {
+    .buttonsContainer__details {
         font-size: max(2em, min(7em, calc(100vw / 70)));
     }
 }
 
 @media (max-width: 1201px) and (min-aspect-ratio: 60/29) {
-    #background {
+    .body__background {
         height: 20vh;
         min-height: auto;
     }
-    #buttonsContainer {
+    .body__buttonsContainer {
         top: 70vh;
         left: 10%;
     }
 }
 
 @media (max-width: 1025px) {
-    #commonContainer {
+    .body__commonContainer {
         width: 96%;
     }
-    #lady {
+    .body__lady {
         left: -10px;
     }
-    #phone {
+    .body__phone {
         right: 1em;
     }
 }
 
 @media (max-width: 1025px) and (orientation: portrait) {
-    .containerAbout h3 {
+    .containerAbout__title {
         font-size: max(2.8em, min(5.6em, calc(100vw * 4 / 140)));
     }
-    .containerAbout p {
+    .containerAbout__descr {
         font-size: max(1.5em, min(4em, calc(100vw / 70)));
+    }
+    .buttonsContainer__button {
+        margin-left: 5vw;
     }
     .button {
         width: 330px;
         height: 110px;
-        margin-left: 5vw;
     }
 }
 
 @media (max-width: 1025px) and (min-aspect-ratio: 204/109) {
-    #background {
+    .body__background {
         height: 20vh;
         min-height: auto;
     }
-    #lady {
+    .body__lady {
         left: auto;
         height: 40vh;
     }
-    #lotusesLogo {
+    .containerAbout__lotusesLogo {
         height: 10vh;
         min-height: auto;
         min-width: auto;
     }
-    #phone {
+    .body__phone {
         right: 0;
         height: 90vh;
         top: 1vh;
         bottom: auto;
     }
-    .containerAbout h1 {
+    .containerAbout__header {
         font-size: 10vw;
     }
-    .containerAbout h3 {
+    .containerAbout__title {
         font-size: 3vw;
     }
-    .containerAbout p {
+    .containerAbout__descr {
         margin-top: -7vh;
     }
-    #buttonsContainer {
+    .body__buttonsContainer {
         top: 55vh;
+    }
+    .buttonsContainer {
         justify-content: space-evenly;
     }
     .button {
@@ -407,169 +421,185 @@ button {
 }
 
 @media (max-width: 769px) {
-    #buttonsContainer {
+    .body__buttonsContainer {
         margin: 0;
         top: 55vh;
         padding-left: 10%;
     }
-    #commonContainer {
+    .body__commonContainer {
         width: 100%;
     }
-    #contact {
+    .body__contact {
         left: 2vw;
     }
-    #lady {
+    .body__lady {
         left: 1%;
     }
-    #mainLogo {
+    .body__mainLogo {
         margin-left: 10px;
         margin-top: 15px;
     }
-    #phone {
+    .body__phone {
         display: none;
     }
     .containerAbout {
         width: 70%;
     }
-    .button {
+    .buttonsContainer__button {
         margin-bottom: 15px;
+    }
+    .button {
         width: 210px;
     }
 }
 
 @media (max-width: 769px) and (orientation: portrait) {
-    #buttonsContainer {
+    .body__buttonsContainer {
         top: 50vh;
-        width: auto;
         padding: 0;
+    }
+    .buttonsContainer {
+        width: auto;
         align-items: center;
         flex-direction: row;
     }
-    #contact {
+    .body__contact {
         font-size: max(2vh, 2.9vw);
     }
-    #lady {
+    .body__lady {
         display: none;
     }
-    #phone {
+    .body__phone {
         display: none;
     }
-    .containerAbout {
+    .body__containerAbout {
         left: 0;
         right: 0;
         margin: 0 auto;
+    }
+    .containerAbout {
         text-align: center;
     }
-    .containerAbout h1 {
-         height: auto;
+    .containerAbout__header {
+        height: auto;
         padding: 1vh 0 0;
         left: 0;
         font-size: 15vw;
         line-height: 4vw;
     }
-    .containerAbout h3 {
+    .containerAbout__title {
         font-size: 5vw;
         line-height: 1vw;
     }
-    .containerAbout p {
+    .containerAbout__descr {
         font-size: max(2vh, 2.9vw);
         line-height: 1em;
+    }
+    .buttonsContainer__button {
+        margin-left: 0;
+        margin-bottom: 0;
     }
     .button {
         width: 270px;
         height: 90px;
-        margin-left: 0;
-        margin-bottom: 0;
     }
-    button {
+    .buttonsContainer__details {
         font-size: 4vw;
         margin-bottom: 0;
     }
 }
 
 @media (max-width: 769px) and (min-aspect-ratio: 769/555) {
-    #contact{
+    .body__contact {
         font-size: 1.8vw;
         bottom: 1vh;
     }
-    #background {
+    .body__background {
         height: 20vh;
         min-height: auto;
     }
-    #buttonsContainer {
+    .body__buttonsContainer {
         left: auto;
         width: 100%;
         padding: 0;
         margin: 0;
         top: 60vh;
     }
-    #mainLogo {
+    .body__mainLogo {
         min-height: 50px;
         min-width: 70;
         margin-left: 5px;
         margin-top: 10px;
     }
-    #lady {
+    .body__lady {
         height: 40vh;
+    }
+    .buttonsContainer__button {
+        margin: 0;
     }
     .button {
         width: 120px;
         height: 40px;
         font-size: 1.5vw;
-        margin: 0;
     }
-    .containerAbout h1 {
+    .containerAbout__header {
         font-size: 9vw;
     }
-    .containerAbout h3 {
+    .containerAbout__title {
         font-size: 3vw;
         margin-top: 3vh;
     }
-    .containerAbout p {
+    .containerAbout__descr {
         font-size: 2vw;
         margin-top: -5vh;
     }
 }
 
 @media (max-width: 577px) {
-    #buttonsContainer {
-        top: max(60%, 300px);
-        align-items: center;
-        padding-left: 0;
+    .body__buttonsContainer {
         margin: 0 auto;
+        padding-left: 0;
+        /* top: max(60%, 300px); */
     }
-    #commonContainer {
+    .buttonsContainer {
+        align-items: center;
+    }
+    .body__commonContainer {
         width: 100%;
     }
-    #lady {
+    .body__lady {
         display: none;
     }
-    #lotusesLogo {
+    .containerAbout__lotusesLogo {
         min-width: 70px;
         min-height: 70px;
     }
-    #mainLogo {
+    .body__mainLogo {
         min-height: 50px;
         min-width: 70;
         margin-left: 5px;
         margin-top: 10px;
     }
-    #phone {
+    .body__phone {
         display: none;
     }
-    .button {
+    .buttonsContainer__button {
         margin: 0 10px;
+    }
+    .button {
         font-size: 1em;
     }
-    .containerAbout {
+    .body__containerAbout {
         left: auto;
         padding: 2.5em 0 1em;
+    }
+    .containerAbout {
         width: 100%;
     }
 }
 
 @media (max-width: 577px) and (orientation: portrait) {
-    #buttonsContainer {
+    .buttonsContainer {
         flex-direction: column;
     }
     .button {
