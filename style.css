@@ -220,8 +220,6 @@ body {
     color: var(--main-color-font);
     font-family: "Montserrat Alternates", sans-serif;
     background-color: #f0d0d1;
-    height: 13vh;
-    width: 18vw;
     border-radius: 15px;
     border: none;
     display: flex;
