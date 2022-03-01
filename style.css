@@ -15,7 +15,6 @@ body {
 .body {
     background: linear-gradient(75deg, #f0f8cd, #f1d1d2) fixed;
     font-family: "Montserrat Alternates", sans-serif;
-    position: absolute;
 }
 
 .body__background {
@@ -139,6 +138,7 @@ body {
     margin: 0 auto;
     background-color: #000000;
 }
+
 .body__containerAbout {
     position: absolute;
     left: 27%;
@@ -558,7 +558,6 @@ body {
     .body__buttonsContainer {
         margin: 0 auto;
         padding-left: 0;
-        /* top: max(60%, 300px); */
     }
     .buttonsContainer {
         align-items: center;
